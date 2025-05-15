@@ -1,0 +1,27 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>동아리 목록</title>
+</head>
+<body>
+    <div style="text-align: right; margin: 10px;">
+        <a href="{% url 'login' %}">
+            <button>로그인</button>
+        </a>
+        <a href="{% url 'signup' %}">
+            <button>회원가입</button>
+        </a>
+    </div>
+
+    <h1>동아리 목록</h1>
+    <ul>
+        {% for club in clubs %}
+            <li>
+                <a href="{% url 'club_detail' club.id %}">{{ club.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

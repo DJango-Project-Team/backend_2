@@ -1,0 +1,15 @@
+<!-- templates/club_detail.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ club.name }}</title>
+</head>
+<body>
+    <h1>{{ club.name }}</h1>
+    <p>{{ club.description }}</p>
+
+    <!-- 신청하기 버튼 -->
+    <a href="{% url 'application_form' club.id %}"><button>신청하기</button></a>
+</body>
+</html>

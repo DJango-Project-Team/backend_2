@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>동아리 사이트 회원가입 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        input {
+            height: 35px;
+            width: 250px;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+        .sun {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sun">
+        <h1>회원가입 페이지</h1>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="휴대폰 번호 또는 이메일 주소" required><br>
+            <input type="password" name="password" placeholder="비밀번호" autocomplete="new-password" required><br>
+            <input type="text" name="username" placeholder="성명" required><br>
+            <input type="text" name="userid" placeholder="사용자 아이디" autocomplete="off" required><br>
+            <input type="submit" value="계정 생성">
+        </form>
+
+        <form method="GET" action="{% url 'login' %}">
+            <input type="submit" value="뒤로">
+        </form>
+    </div>
+</body>
+</html>
