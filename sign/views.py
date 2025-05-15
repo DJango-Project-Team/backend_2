@@ -10,10 +10,10 @@ def login_view(request):
 
         try:
             user = Sign.objects.get(username=username, password=password)
-            return render(request, 'New_Page_01.html', {'user': user})
+            return render(request, 'sign/login.html', {'user': user})
         except Sign.DoesNotExist:
             messages.error(request, '아이디 또는 비밀번호가 일치하지 않습니다.')
-            return render(request, 'Test_01.html')
+            return render(request, 'sign/Test_01.html')
 
     return render(request, 'sign/Test_01.html')
 
